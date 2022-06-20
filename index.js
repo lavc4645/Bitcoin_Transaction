@@ -41,7 +41,7 @@ console.log("private key : " + pk + " , Public key : " + addy);
   your wallet. This amount will be deducted from your wallet and sent to this address.
 */
 
-let sendBitcoin = (recieverAddress, amountToSend) => {
+let sendBitcoin = async (recieverAddress, amountToSend) => {
     const sochain_network = "BTCTEST"; // the Testnet network for sochain
 
     privatekey = pk
@@ -70,7 +70,7 @@ let outputCount =2
 // ********************* Receiving unspent outputs *****************************
 
 
-const utxos = await.get(
+const utxos = await axios.get(
     'https://sochain.com/api/v2/get_tx_unspent/$BTCTEST/$mx81QK2K95oNhDddHeeErav815NUKhku2V'
 );
 
@@ -153,3 +153,10 @@ const result = await axios({
 return result.data.data;
 
 }
+
+
+
+
+
+
+sendBitcoin('mfZqMWr3LXd2d6NvkdjD2GsxN3bwe4v5h2', 0.000003);
